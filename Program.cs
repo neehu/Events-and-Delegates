@@ -15,14 +15,16 @@ namespace ConsoleApplication4
             string ans="no";
             while(ans !="Yes")
             {
-                Console.ReadLine();
+                ans=Console.ReadLine();
             }
-            return "yes";
+            return ans;
         }
         static void Main(string[] args)
         {
-            Assignments num1 = new Assignments(Check());
-            num1("yes");
+            Assignments test = new Assignments();
+            string input2 = test.Check("yes");
+            Console.WriteLine(input2);
+            
         }
     }
 }
