@@ -9,7 +9,7 @@ namespace ConsoleApplication4
     
     class Program
     {
-        delegate string Assignments(string answer);
+        delegate string Assignments();
         public string Check(string x)
         {
             string ans="no";
