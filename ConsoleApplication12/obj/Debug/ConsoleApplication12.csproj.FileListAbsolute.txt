@@ -8,3 +8,6 @@ C:\Users\Neeharika.Pathuri\Documents\HelloWorld\ConsoleApplication12\ConsoleAppl
 C:\Users\Neeharika.Pathuri\Documents\HelloWorld\ConsoleApplication12\ConsoleApplication12\obj\Debug\ConsoleApplication12.csprojResolveAssemblyReference.cache
 C:\Users\Neeharika.Pathuri\Documents\HelloWorld\ConsoleApplication12\ConsoleApplication12\obj\Debug\ConsoleApplication12.exe
 C:\Users\Neeharika.Pathuri\Documents\HelloWorld\ConsoleApplication12\ConsoleApplication12\obj\Debug\ConsoleApplication12.pdb
+C:\Users\Neeharika.Pathuri\Documents\Events-and-Delegates\ConsoleApplication12\bin\Debug\ConsoleApplication12.exe.config
+C:\Users\Neeharika.Pathuri\Documents\Events-and-Delegates\ConsoleApplication12\obj\Debug\ConsoleApplication12.exe
+C:\Users\Neeharika.Pathuri\Documents\Events-and-Delegates\ConsoleApplication12\obj\Debug\ConsoleApplication12.pdb

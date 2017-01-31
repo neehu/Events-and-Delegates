@@ -14,58 +14,61 @@ namespace ConsoleApplication12
     {
         
 
-        public int x;
-        public int y;
+        public int xposition;
+        public int yposition;
         public Point()
         {
 
         }
-        public Point(int x, int y)
+        public Point(int xposition, int yposition)
         {
-            this.x = x;
-            this.y = y;
+            this.xposition = xposition;
+            this.yposition = yposition;
         }
     }
     class Canvas
     {
-        delegate string check();
+        delegate bool check();
         event check mouseclicked;
             
-        public Point p1,p2,p3,p4;
+        public Point point1,point2,point3,point4;
         public Canvas()
         {
             mouseclicked = new check(mousecheck);
 
         }
 
-    public Canvas(Point p1,Point p2,Point p3,Point p4)
+    public Canvas(Point point1,Point point2,Point point3,Point point4)
         {
-            this.p1 = p1;
-            this.p2 = p2;
-            this.p3 = p3;
-            this.p4 = p4;
+            this.point1 = point1;
+            this.point2 = point2;
+            this.point3 = point3;
+            this.point4 = point4;
         }
-         
-        public string mousecheck()
-        {
-            string ans = "no";
-            while(ans!="Yes")
-            {
-                Console.WriteLine("Enter Yes when ready");
-                ans=Console.ReadLine();
-            }
-            return ans;
-        }
-    
 
+        public bool mousecheck()
+        {
+            if ((point1.xposition <= 10) & (point1.yposition <= 10))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
         static void Main(string[] args)
         {
-            Point point = new Point();
-            Canvas canvas = new Canvas();
-            
+            Point point1,point2,point3,point4 = new Point();
+            point1(10, 10);
+            point2(10, 10);
+            point3(10, 10);
+            point4(10, 10);
 
-            string ans=canvas.mouseclicked();
-            Console.WriteLine("The event has ocurred because the user has entered {0}", ans);
+
+            bool answer=canvas.mouseclicked();
+            Console.WriteLine("The event has ocurred because the user has entered {0}", answer);
             Console.ReadKey();   
 
         }
