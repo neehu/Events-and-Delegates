@@ -5,73 +5,64 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-
-
-
-namespace ConsoleApplication12
+namespace CAnvas
 {
-     class Point
+    class Point
+{        
+    public int xposition;
+    public int yposition;
+    public Point()
     {
-        
 
-        public int xposition;
-        public int yposition;
-        public Point()
-        {
-
-        }
-        public Point(int xposition, int yposition)
-        {
-            this.xposition = xposition;
-            this.yposition = yposition;
-        }
     }
-    class Canvas
+    public Point(int xposition, int yposition)
     {
-        delegate bool check();
-        event check mouseclicked;
+        this.xposition = xposition;
+        this.yposition = yposition;
+    }
+}
+class Canvas
+{
+    delegate bool check();
+    event check mouseclicked;
+    public Point firstPoint,secondPoint,thirdPoint,fourthPoint;
+    public Canvas()
+    {
+        mouseclicked = new check(mousecheck);
+
+    }
+
+public Canvas(Point firstPoint,Point secondPoint,Point thirdPoint,Point fourthPoint)
+    {
+        this.firstPoint = firstPoint;
+        this.secondPoint = secondPoint;
+        this.thirdPoint = thirdPoint;
+        this.fourthPoint = fourthPoint;
+    }
+
+    public bool mousecheck()
+    {
             
-        public Point point1,point2,point3,point4;
-        public Canvas()
-        {
-            mouseclicked = new check(mousecheck);
+        if ((firstPoint.xposition <= 10) & (firstPoint.yposition <= 10))            
+            return true;            
+        else            
+            return false;
+            
 
-        }
-
-    public Canvas(Point point1,Point point2,Point point3,Point point4)
-        {
-            this.point1 = point1;
-            this.point2 = point2;
-            this.point3 = point3;
-            this.point4 = point4;
-        }
-
-        public bool mousecheck()
-        {
-            if ((point1.xposition <= 10) & (point1.yposition <= 10))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        static void Main(string[] args)
-        {
-            Point point1,point2,point3,point4 = new Point();
-            point1(10, 10);
-            point2(10, 10);
-            point3(10, 10);
-            point4(10, 10);
-
-
-            bool answer=canvas.mouseclicked();
-            Console.WriteLine("The event has ocurred because the user has entered {0}", answer);
-            Console.ReadKey();   
-
-        }
     }
+    static void Main(string[] args)
+    {
+        bool answer = true;
+        Point Firstpoint= new Point(10, 10);
+        Point Secondpoint= new Point(10, 10);
+        Point Thirdpoint= new Point(10, 10);
+        Point Fourthpoint = new Point(10, 10);
+        Canvas canvas = new Canvas(Firstpoint,Secondpoint,Thirdpoint,Fourthpoint);
+            answer=canvas.mouseclicked();
+        Console.WriteLine("The event has ocurred because the user has entered {0}", answer);
+        Console.ReadKey();   
+
+    }
+}
 }
 
