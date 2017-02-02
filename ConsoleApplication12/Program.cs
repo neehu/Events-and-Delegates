@@ -25,30 +25,24 @@ namespace CAnvas
     class Canvas
     {
 
-        event check mouseclicked;
+        event check mousecheck;
         public Point firstPoint, secondPoint, thirdPoint, fourthPoint;
-        public Canvas()
-        {
-            mouseclicked = new check(mousecheck);
-
-        }
-
         public Canvas(Point firstPoint, Point secondPoint, Point thirdPoint, Point fourthPoint)
         {
             this.firstPoint = firstPoint;
             this.secondPoint = secondPoint;
             this.thirdPoint = thirdPoint;
             this.fourthPoint = fourthPoint;
+            mousecheck = new check(mouseclicked);
         }
 
-        public bool mousecheck()
+        public bool mouseclicked()
         {
-
             if ((firstPoint.xposition <= 10) & (firstPoint.yposition <= 10))
                 return true;
             else
-                return false;
 
+                return false;
 
         }
         static void Main(string[] args)
@@ -60,7 +54,7 @@ namespace CAnvas
             Point Thirdpoint = new Point(10, 10);
             Point Fourthpoint = new Point(10, 10);
             Canvas canvas = new Canvas(Firstpoint, Secondpoint, Thirdpoint, Fourthpoint);
-            answer = canvas.mouseclicked();
+            answer = canvas.mousecheck();
             Console.WriteLine("The event has ocurred because the user has entered {0}", answer);
             Console.ReadKey();
 
